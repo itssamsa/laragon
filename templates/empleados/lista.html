@@ -1,0 +1,35 @@
+<h1>Lista de empleados</h1>
+
+<a href="{% url 'crear' %}">
+    Crear empleado
+</a>
+
+<table border="1">
+
+<tr>
+    <th>Nombre</th>
+    <th>Cargo</th>
+    <th>Área</th>
+    <th>Correo</th>
+</tr>
+
+
+{% for empleado in empleados %}
+
+<tr>
+    <td>{{ empleado.nombre }}</td>
+    <td>{{ empleado.cargo }}</td>
+    <td>{{ empleado.area }}</td>
+    <td>{{ empleado.correo }}</td>
+</tr>
+
+{% empty %}
+
+<tr>
+    <td>No hay empleados</td>
+</tr>
+
+{% endfor %}
+
+
+</table>
